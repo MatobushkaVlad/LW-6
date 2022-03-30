@@ -40,6 +40,23 @@ void Add(int data, Tree*& root)
 		v->right = u;
 }
 
+Tree* Search(int data, Tree* v)
+{
+
+
+
+
+}
+
+void Delete(int data, Tree*& root)
+{
+
+
+
+
+
+}
+
 
 int main()
 {
