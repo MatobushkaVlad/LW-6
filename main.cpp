@@ -50,9 +50,6 @@ Tree* Search(int data, Tree* v)
 		return  Search(data, v->left);
 	else
 		return Search(data, v->right);
-
-
-
 }
 
 void Delete(int data, Tree*& root)
@@ -102,33 +99,15 @@ void Delete(int data, Tree*& root)
 	if (t != nullptr)
 		t->parent = u->parent;
 	delete u;
-
-
-
-
-
 }
 
-void Search(int data, Tree* v, int number)
+void Output(Tree* v)
 {
-	std::ofstream out("output.txt");
 	if (v == nullptr)
-	{
-		std::cout << data << " - n";
-		out << data << " - n";
 		return;
-	}
-	else if (v->data == data)
-	{
-		std::cout << data << " - " << number;
-		out << data << " - " <<  number;
-		return;
-	}
-	else if (data < v->data)
-		Search(data, v->left, number + 1);
-	else
-		Search(data, v->right, number + 1);
-	
+	Output(v->left);
+	std::cout << v->data << std::endl;
+	Output(v->right);
 }
 
 int main()
